@@ -27,7 +27,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <h1 className="text-4xl p-4 bg-cyan-800 text-center text-white">React 19 Featues Demo</h1>
+        <div className="flex justify-center m-5">
         {children}
+        </div>
       </body>
     </html>
   );
