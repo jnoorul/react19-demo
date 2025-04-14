@@ -1,16 +1,16 @@
-'use client'
+"use client";
 
-import { use, Suspense } from 'react'
+import { use, Suspense } from "react";
 
 async function fetchUser() {
-  const res = await fetch('https://jsonplaceholder.typicode.com/users/1')
-  return res.json()
+  const res = await fetch("https://jsonplaceholder.typicode.com/users/1");
+  return res.json();
 }
 
-const userPromise = fetchUser()
+const userPromise = fetchUser();
 
 function UserProfileContent() {
-  const user = use(userPromise)
+  const user = use(userPromise);
 
   return (
     <div className="p-6 max-w-md mx-auto bg-white rounded-xl shadow-md space-y-4">
@@ -19,7 +19,7 @@ function UserProfileContent() {
       <p className="text-gray-600">Email: {user.email}</p>
       <p className="text-gray-600">City: {user.address.city}</p>
     </div>
-  )
+  );
 }
 
 export default function UserProfile() {
@@ -27,5 +27,5 @@ export default function UserProfile() {
     <Suspense fallback={<p>Loading user data...</p>}>
       <UserProfileContent />
     </Suspense>
-  )
+  );
 }
